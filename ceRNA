@@ -7,3 +7,6 @@
     type.xls第一列是基因名，第二列是注明mRNAdown、mRNAup、miRNAdown、miRNAup、lncRNAdown、lncRNAup
 5、构建网络：
 两个文件：type.txt即上方的type.xls；input.txt将上方的lncRNA_miRNA.xlsx和miRNA_mRNA.xlsx的前两列纵向保存成两列
+6、ceRNA网络中的DElncRNA生存分析
+   ceRNA网络中的DEmiRNA生存分析
+   ceRNA网络中的DEmRNA生存分析
