@@ -1,4 +1,9 @@
 ####TCGA数据库挖掘-ceRNA网络构建
 1、差异mRNA、差异lncRNA、差异miRNA
-2、mircode数据库：有联系的lncRNA和miRNA
-
+2、mircode数据库：找到有相互作用lncRNA和miRNA(先找到DElncRNA所存在的关系对；再对上述结果找DEmiRNA所在关系对)——得到lncRNA_miRNA.xlsx
+3、DEmiRNA先通过starBase数据库找到相应5p和3p的miRNA;然后通过三个数据库(miRDB、miRTarBase、TargetScan),miRNA预测靶基因和差异mRNA取交集,得到miRNA_mRNA.xlsx(该文件的miRNA名去掉3p和5p)
+4、准备六个文件：DElncRNA.xlsx、DEmiRNA.xlsx、DEmRNA.xlsx、lncRNA_miRNA.xlsx、miRNA_mRNA.xlsx、type.xls
+注：DElncRNA.xlsx来自lncRNA_miRNA.xlsx中lncRNA列的unique基因；DEmiRNA.xlsx来自lncRNA_miRNA.xlsx中miRNA列的unique基因;DEmRNA.xlsx是miRNA预测靶基因和差异mRNA取交集的DEmRNA
+    type.xls第一列是基因名，第二列是注明mRNAdown、mRNAup、miRNAdown、miRNAup、lncRNAdown、lncRNAup
+5、构建网络：
+两个文件：type.txt即上方的type.xls；input.txt将上方的lncRNA_miRNA.xlsx和miRNA_mRNA.xlsx的前两列纵向保存成两列
